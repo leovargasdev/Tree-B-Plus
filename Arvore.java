@@ -1,5 +1,7 @@
 import java.util.Collections;
 import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 class Arvore{
 
@@ -11,29 +13,54 @@ class Arvore{
 
 	}
 
-	public void insert(int chave){
+	public void insert(Integer chave){
 
-  	Raiz = NovoNodo(chave,this.Raiz);
+  	NovoNodo(chave,this.Raiz);
 
   }
 
-	public Nodo NovoNodo(int chave, Nodo N){
+	public void NovoNodo(Integer chave, Nodo N){
 
 		Nodo Novo = new Nodo();
 
 		if( Raiz == null ){
 
-			Raiz = Novo;
+			this.Raiz = Novo;
 
 			Novo.NovoElemento(chave);
 
-		} else if (N.filho[0] != null) {
-
-			System.out.println("-=-=-=-=-=-=-=-= chave: " + chave);
-
 		} else if (N.lista.size() < N.limite){
 
-			N.NovoElemento(chave);
+			/*if (N.filho.size() != 0) {
+
+				int k = 0;
+
+				for(k = 0; k < N.lista.size(); k++){
+
+					if(N.lista.get(k) > chave){
+
+						break;
+					}
+
+				}
+
+				if (k == N.lista.size()) k--;
+
+				for(int j = 0; j < N.lista.size(); j++){
+
+					if(N.lista.get(j) == N.lista.get(k)){
+
+						//NovoNodo(chave,N.filho.get(k));
+
+					}
+
+				}
+
+			} else {*/
+
+				N.NovoElemento(chave);
+
+			//}
 
 		} else {
 
@@ -47,21 +74,26 @@ class Arvore{
 
 			N.pai = Pai;
 
-			Pai.filho[0] = Novo;
+			//Pai.filho[0] = Novo;
 
-			Pai.filho[1] = N;
+			System.out.println("-=-=-=-=-=-=-=-=-=-=-");
 
-			NovoNodo(chave, Pai);
-/*
-			System.out.println(Pai.filho[0].lista + "<-Esquerda");
+			Pai.filho.put( 1 , Novo );
+
+			//Pai.filho[1] = N;
+
+			Pai.filho.put( 2 , N );
+
+
+			this.Raiz = Pai;
+
+			System.out.println(Pai.filho.get(1).lista + "<-Esquerda");
 
 			System.out.println("\t\t" + Novo.pai.lista + "<-Pai");
 
-			System.out.println(Pai.filho[1].lista + "<-Direita");
-*/
-		}
+			System.out.println(Pai.filho.get(2).lista + "<-Direita");
 
-		return Raiz;
+		}
 
 	}
 
@@ -73,9 +105,9 @@ class Arvore{
 
 		Pai.add(B.get(0));
 
-		A.remove(A.size()-1);
+		//A.remove(A.size()-1);
 
-		B.remove(0);
+		//B.remove(0);
 
 		return Pai;
 	}
@@ -100,5 +132,22 @@ class Arvore{
 		}
 
 	}
+
+	/*public void Imprimir(Nodo N){
+
+		for( int k = 0; k < N.limite; k++){
+
+			if(N.filho[k] != null){
+
+				Imprimir(N.filho[k]);
+
+			}
+
+		}
+
+		if (N == this.Raiz) System.out.println(N.lista + " <---- Raiz");
+		else System.out.println(N.lista);
+
+	}*/
 
 }

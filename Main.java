@@ -1,5 +1,7 @@
 import java.util.Collections;
 import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 class Main{
 
@@ -9,17 +11,21 @@ class Main{
 
 		Arvore.insert(0);
 
-		Arvore.insert(1);
+		Arvore.insert(10);
 
-		Arvore.insert(2);
+		Arvore.insert(20);
 
-		Arvore.insert(3);
+		Arvore.insert(30);
 
-		Arvore.insert(4);
+		Arvore.insert(40);
 
-		Arvore.insert(5);
+		Arvore.insert(50);
 
-		Arvore.insert(6);
+		Arvore.insert(60);
+
+
+		//Arvore.Imprimir(Arvore.Raiz);
+
 
 	}
 }
