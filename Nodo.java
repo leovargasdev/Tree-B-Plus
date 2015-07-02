@@ -28,4 +28,16 @@ class Nodo{
 
 	}
 
+	public void DeletaALL(){
+
+		this.lista.clear();
+		this.filho.clear();
+
+	}
+
+	public boolean VereficaPai(){
+		if(this.pai == null) return false;
+		return true; // tem pai;
+	}
+
 }

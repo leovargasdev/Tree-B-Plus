@@ -18,21 +18,6 @@ class Main{
 			else op++;
 		}while(op != 1);
 		Arvore.Imprimir(Arvore.Raiz);
-		
+
 	}
-
-	/*for (int k = 0; k < AVO.lista.size(); k++){
-		if(k > (AVO.lista.size()/2) - 1){
-			//System.out.println(AVO.lista.get(k));
-			copia.NovoElemento(AVO.lista.get(k));
-			if ( AVO.filho.get(AVO.lista.get(k)) != null ){
-				//System.out.println(AVO.filho.get(AVO.lista.get(k)).lista);
-				copia.filho.put(AVO.lista.get(k), AVO.filho.get(AVO.lista.get(k)));
-				AVO.filho.remove(AVO.lista.get(k));
-			}
-			AVO.lista.remove(k);
-			k--;
-		}
-	}*/  //Separa duas lista e salva os hashmaps
-
 }
